@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="static/styles/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Status App (Development)</title>
+</head>
+
+<style>
+    .interface_red{
+    background-color: red;
+    border-radius: 2px;
+    display: inline-block;
+    width:fit-content;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+body{
+    margin: 25px;
+    padding: 25px;
+}
+
+.interface_green{
+    background-color: green;
+    border-radius: 2px;
+    display: inline-block;
+    width:fit-content;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+}
+</style>
+<body>
+
+ 
+    <br>
+    <h2>Switch 31: Interfaces real-time status</h2>
+    {% for i in interfaces31 %}
+        {% if(interfaces31[i]['is_up']) == True %}
+            <div class="interface_green"  data-toggle="tooltip" data-html="true" data-placement="top" title="is_enabled: {{interfaces31[i]['is_enabled']}} | Last Flapped: {{interfaces31[i]['last_flapped']}} | Speed: {{interfaces31[i]['speed']}}">{{ i }}</div>
+        {%else%}
+            <div class="interface_red"  data-toggle="tooltip" data-placement="top" title="is_enabled: {{interfaces31[i]['is_enabled']}} | Last Flapped: {{interfaces31[i]['last_flapped']}} | Speed: {{interfaces31[i]['speed']}}">{{ i }}</div>
+        {%endif%}
+    {% endfor %}
+    <br><br>
+    <h2>Switch 33: Interfaces real-time status</h2>
+    {% for i in interfaces33 %}
+        {% if(interfaces33[i]['is_up']) == True %}
+            <div class="interface_green"  data-toggle="tooltip" data-html="true" data-placement="top" title="is_enabled: {{interfaces33[i]['is_enabled']}} | Last Flapped: {{interfaces33[i]['last_flapped']}} | Speed: {{interfaces33[i]['speed']}}">{{ i }}</div>
+        {%else%}
+            <div class="interface_red"  data-toggle="tooltip" data-placement="top" title="is_enabled: {{interfaces33[i]['is_enabled']}} | Last Flapped: {{interfaces33[i]['last_flapped']}} | Speed: {{interfaces33[i]['speed']}}">{{ i }}</div>
+        {%endif%}
+    {% endfor %}
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+</body>
+</html>

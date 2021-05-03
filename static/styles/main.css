@@ -1,0 +1,11 @@
+.interface_red{
+    background-color: red;
+    border-radius: 2px;
+    display: inline-block;
+    height: 30px;
+    width: 45px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
